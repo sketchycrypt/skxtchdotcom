@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navyblack: #101010;
+  --font-lexend: "Lexend", sans-serif;
+}
+
+
+.main-bg {
+    background: 
+      linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)),
+      url('../static/bg.png') center/cover no-repeat;
+  }
