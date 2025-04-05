@@ -2,31 +2,49 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: 'main'
 
 jobs:
-  deploy:
+  build_site:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
+          cache: npm
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: build
         env:
-          USERNAME: ${{ secrets.USERNAME }
+          BASE_PATH: '/skxtchdotcom'
+          TOKEN: ${{ secrets.TOKEN }}     
+          USERNAME: ${{ secrets.USERNAME }} 
+          APIKEY: ${{ secrets.APIKEY }}   
+        run: |
+          npm run build
+          touch build/.nojekyll
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./build
-          keep_files: false
-          force_orphan: true
+          path: 'build/'
+
+  deploy:
+    needs: build_site
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1
