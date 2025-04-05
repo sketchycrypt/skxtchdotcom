@@ -1,4 +1,5 @@
-import { GITHUB_TOKEN } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+const { TOKEN } = env
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
@@ -7,7 +8,7 @@ export async function load({ fetch }) {
         const response = await fetch(`https://api.github.com/graphql`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Authorization': `Bearer ${TOKEN}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
