@@ -15,6 +15,7 @@
 
 <svelte:head>
   <link rel="shortcut icon" href="/favicon.ico"/>
+  <title>Projects</title>
 </svelte:head>
 
 <main class="font-lexend font-bold relative min-h-screen text-white">

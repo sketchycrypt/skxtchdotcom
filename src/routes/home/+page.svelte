@@ -7,6 +7,7 @@
   import { page } from "$app/stores";
   import { onMount } from "svelte";
   import { invalidate } from "$app/navigation";
+  import messages from "$lib/texts.json"
 
   let lastUpdated = new Date();
   let isLoading = false;
@@ -30,16 +31,11 @@
 <div
   class="min-h-screen flex flex-col items-center justify-center space-y-6 px-4"
 >
-  <h2 class="text-3xl font-bold text-center">skxtch</h2>
+  <h2 class="text-3xl font-bold text-center hover:rotate-x-15 hover:-rotate-y-15 transition ease-in-out cursor-pointer">skxtch</h2>
 
   <div class="font-lexend text-2xl w-128 h-8 text-center">
     <Typewriter
-      texts={[
-        "welcome to my website",
-        "have a nice day!",
-        "random message goes here",
-        "hello world!",
-      ]}
+      texts={messages}
       typingSpeed={80}
       deletingSpeed={40}
       pauseBetween={1500}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -6,9 +6,36 @@
   --font-lexend: "Lexend", sans-serif;
 }
 
-
 .main-bg {
-    background: 
-      linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)),
-      url('../static/bg.png') center/cover no-repeat;
+  background: linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)),
+    url("../static/bg.png") center/cover no-repeat;
+}
+
+@keyframes spin3d {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
   }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+.rotate-animate {
+  animation: spin3d 3s linear infinite;
+}
+
+.hover-spin3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+}
+
+.hover-spin3d:hover {
+  animation: spin3d 5s linear infinite;
+}
+
+.perspective-3d {
+  perspective: 1000px;
+}

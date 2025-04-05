@@ -24,8 +24,8 @@
   }
 </script>
 
-<div class="container mx-auto px-4 py-12 max-w-6xl">
-  <h1 class="text-4xl font-bold mb-12 text-center">My Projects</h1>
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <h1 class="text-4xl font-bold mb-12 text-center">Projects</h1>
 
   {#if data.error}
     <div
@@ -38,7 +38,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each data.projects?.slice(0, 6) || [] as project}
       <div
-        class="bg-navyblack/75 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-white h-full flex flex-col"
+        class="bg-navyblack/75 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/75 h-full flex flex-col"
       >
         <div class="p-5">
           <div class="flex justify-between items-start mb-3">

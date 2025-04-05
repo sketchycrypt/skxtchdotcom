@@ -53,7 +53,7 @@
     });
   </script>
   
-  <div class="inline-flex items-center font-mono">
+  <div class="inline-flex items-center font-lexend text-shadow-lg">
     <span class="whitespace-nowrap">{displayedText}</span>
     {#if cursor && isTyping}
       <span 

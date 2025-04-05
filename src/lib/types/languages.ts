@@ -5,4 +5,6 @@ export type SupportedLanguage =
   | 'C++'
   | 'C'
   | 'CSS'
+  | 'Arch Linux'
+  | 'Svelte'
   | string;
