@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main'
+    branches: ['main']
 
 jobs:
   build_site:
@@ -20,20 +20,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: build
+      - name: Build
         env:
           BASE_PATH: '/skxtchdotcom'
-          TOKEN: ${{ secrets.TOKEN }}     
-          USERNAME: ${{ secrets.USERNAME }} 
-          APIKEY: ${{ secrets.APIKEY }}   
+          TOKEN: ${{ secrets.TOKEN }}
+          USERNAME: ${{ secrets.USERNAME }}
+          APIKEY: ${{ secrets.APIKEY }}
         run: |
           npm run build
-          mkdir -p build  # Ensure build directory exists
+          mkdir -p build
           touch build/.nojekyll
-          echo "Content for GitHub Pages" > build/index.html  # Add this line to ensure the build directory has at least one file
 
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v2  
         with:
           path: 'build/'
 
@@ -47,6 +46,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2  
