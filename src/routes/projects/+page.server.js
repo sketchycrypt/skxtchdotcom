@@ -1,4 +1,5 @@
-import { TOKEN } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+const { TOKEN } = env
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
