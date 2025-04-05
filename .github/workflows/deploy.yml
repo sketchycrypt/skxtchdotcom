@@ -28,5 +28,5 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           APIKEY: ${{ secrets.APIKEY}}
         with:
-          publish_dir: ./build
-          force_orphan: true
+          input: .env.ci
+          output: .env
