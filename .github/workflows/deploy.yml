@@ -20,13 +20,13 @@ jobs:
       
       - name: Build
         run: npm run build
-      
+        env:
+          USERNAME: ${{ secrets.USERNAME }
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          USERNAME: ${{ secrets.USERNAME }}
-          TOKEN: ${{ secrets.TOKEN }}
-          APIKEY: ${{ secrets.APIKEY}}
         with:
-          input: .env.ci
-          output: .env
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./build  
+          keep_files: false    
+          force_orphan: true  
