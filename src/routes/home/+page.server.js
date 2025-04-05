@@ -1,4 +1,4 @@
-import { USERNAME, APIKEY } from '$env/static/private';
+import { USERNAME, APIKEY } from '$env/dynamic/private';
 
 export async function load({ fetch, setHeaders }) {
     setHeaders({
