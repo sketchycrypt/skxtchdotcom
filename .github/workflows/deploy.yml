@@ -28,6 +28,7 @@ jobs:
           APIKEY: ${{ secrets.APIKEY }}   
         run: |
           npm run build
+          mkdir -p build  # Ensure build directory exists
           touch build/.nojekyll
 
       - name: Upload Artifacts
