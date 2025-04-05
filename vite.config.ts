@@ -6,5 +6,6 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		tailwindcss(),
-	]
+	],
+	base: '/skxtchdotcom/'
 });
