@@ -30,6 +30,7 @@ jobs:
           npm run build
           mkdir -p build  # Ensure build directory exists
           touch build/.nojekyll
+          echo "Content for GitHub Pages" > build/index.html  # Add this line to ensure the build directory has at least one file
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
