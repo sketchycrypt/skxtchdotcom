@@ -8,6 +8,8 @@
   import CIcon from '$lib/assets/svgs/c.svg';
   import CssIcon from '$lib/assets/svgs/css.svg';
   import BashIcon from '$lib/assets/svgs/gnubash.svg'
+  import svelteIcon from '$lib/assets/svgs/svelte.svg'
+
   import type { SupportedLanguage } from "$lib/types/languages";
   
   const languageIcons: Record<SupportedLanguage, string> = {
@@ -16,7 +18,8 @@
     'C++': CPlusPlusIcon,
     'C': CIcon,
     'CSS': CssIcon,
-    'Shell': BashIcon
+    'Shell': BashIcon,
+    'Svelte': svelteIcon
   } as const;
   
   function getLanguageIcon(language: string): string | undefined {
