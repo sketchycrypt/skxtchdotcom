@@ -11,6 +11,13 @@
     { href: "/contact", text: "Contact" },
     { href: "/about", text: "About Me" },
   ];
+
+  // @ts-ignore
+  let { mobileMenuOpen } = $state(false);
+  
+  function toggleMenu() {
+    mobileMenuOpen = !mobileMenuOpen;
+  }
 </script>
 
 <svelte:head>
@@ -25,19 +32,59 @@
   ></div>
 
   <div class="relative z-10 flex flex-col min-h-screen">
-    <nav class="bg-neutral-900/90 backdrop-blur-sm py-4 sticky top-0 z-20">
-      <div class="container mx-auto px-6">
-        <div class="flex justify-center space-x-6">
+    <nav class="bg-neutral-900/90 backdrop-blur-sm py-2 md:py-4 sticky top-0 z-20">
+      <div class="container md:mx-auto px-4 sm:px-6">
+        <div class="hidden md:flex justify-center space-x-2 sm:space-x-4 md:space-x-6">
           {#each navLinks as { href, text }}
             <a
               href={href}
-              class="px-4 py-2 rounded-lg transition-all duration-300
+              class="px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg transition-all duration-300
                      hover:bg-white/10 hover:scale-105
                      {$page.url.pathname === href ? 'bg-white/20 font-extrabold' : 'opacity-90'}"
             >
               {text}
             </a>
           {/each}
+        </div>
+        
+        <div class="md:hidden flex items-center justify-between">
+          <button 
+            onclick={toggleMenu}
+            class="text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg 
+              class="w-6 h-6" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {#if mobileMenuOpen}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              {:else}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              {/if}
+            </svg>
+          </button>
+
+          {#if mobileMenuOpen}
+            <div class="absolute top-16 left-0 right-0 bg-neutral-900/95 backdrop-blur-md py-4 px-6">
+              <div class="flex flex-col space-y-4">
+                {#each navLinks as { href, text }}
+                  <a
+                    href={href}
+                    class="px-4 py-2 text-base rounded-lg transition-all duration-300
+                           hover:bg-white/10
+                           {$page.url.pathname === href ? 'bg-white/20 font-extrabold' : 'opacity-90'}"
+                    onclick={() => mobileMenuOpen = false}
+                  >
+                    {text}
+                  </a>
+                {/each}
+              </div>
+            </div>
+          {/if}
         </div>
       </div>
     </nav>
