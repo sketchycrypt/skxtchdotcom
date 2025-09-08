@@ -1,5 +1,4 @@
 <script>
-  import twitterIcon from "$lib/assets/svgs/social/x.svg";
   import bskyIcon from "$lib/assets/svgs/social/bluesky.svg";
   import mastodonIcon from "$lib/assets/svgs/social/mastodon.svg";
   import mailIcon from "$lib/assets/svgs/social/mail.svg";
