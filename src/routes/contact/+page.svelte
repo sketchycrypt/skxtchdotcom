@@ -7,23 +7,17 @@
   const buttons = [
     {
       id: 1,
-      link: "https://twitter.com/sketchygfx__",
-      text: "twitter",
-      icon: twitterIcon,
-    },
-    {
-      id: 2,
       link: "https://mastodon.social/@skxtch",
       text: "mastodon",
       icon: mastodonIcon,
     },
     {
-      id: 3,
+      id: 2,
       link: "https://bsky.app/profile/skxtch.com",
       text: "bluesky",
       icon: bskyIcon,
     },
-    { id: 4, link: "mailto:contact@skxtch.com", text: "email", icon: mailIcon },
+    { id: 3, link: "mailto:contact@skxtch.com", text: "email", icon: mailIcon },
   ];
 </script>
 
