@@ -92,7 +92,7 @@
             </div>
           {/if}
 
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+          <p class="text-sm text-left text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
             {project.description || "No description provided"}
           </p>
         </div>
