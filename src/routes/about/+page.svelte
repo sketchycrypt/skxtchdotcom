@@ -4,6 +4,7 @@
   import ArchLinux from "$lib/assets/svgs/archlinux.svg";
   import TypeScript from "$lib/assets/svgs/typescript.svg";
   import Svelte from "$lib/assets/svgs/svelte.svg";
+  import arrow from "$lib/assets/svgs/downwardArrow.svg";
 
   const logos = [
     { name: "Arch Linux", component: ArchLinux },
@@ -87,7 +88,7 @@
   <title>About</title>
 </svelte:head>
 
-<div class="min-h-screen flex flex-col items-center justify-center space-y-6">
+<div class=" flex flex-col items-center justify-center space-y-6">
   <h2
     class="text-3xl font-bold text-center hover:rotate-x-15 hover:-rotate-y-15 transition ease-in-out cursor-pointer"
   >
@@ -111,12 +112,17 @@
     />
   </div>
   <p class="text-2xl max-w-md text-center">
-    I am an 19-year-old from Morocco who enjoys developing things for fun and
+    I am a 19-year-old from Morocco who enjoys developing things for fun and
     occasionally tackling difficult challenges.
   </p>
 
+  <h1 class="text-3xl max-w-md text-center animate-pulse opacity-75">
+    Tools used
+  </h1>
+
+  <img src={arrow} alt="arrow" class="w-8 h-8 mb-5 fill-white animate-bounce"/>
 <div>
-  <p class="text-2xl max-w-md text-center mb-8 underline animate-pulse">Tools used</p>
+  
   <div class="flex items-center gap-8 transition ease-in-out invert">
     {#each logos as { name, component }}
       <div class="transition-transform duration-200 opacity-75 hover:opacity-100 hover:scale-110">

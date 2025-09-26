@@ -29,11 +29,11 @@
 </script>
 
 <div
-  class="min-h-screen flex flex-col items-center justify-center space-y-6 px-4"
+  class="flex flex-col items-center justify-center space-y-6 px-4"
 >
   <h2 class="text-3xl font-bold text-center hover:rotate-x-15 hover:-rotate-y-15 transition ease-in-out cursor-pointer">skxtch</h2>
 
-  <div class="font-lexend text-2xl w-128 h-8 text-center">
+  <div class="font-instrumentsans text-2xl md:w-128 w-64 h-8 text-center">
     <Typewriter
       texts={messages}
       typingSpeed={80}

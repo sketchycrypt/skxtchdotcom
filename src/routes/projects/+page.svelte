@@ -27,7 +27,12 @@
   }
 </script>
 
-<div class="min-h-screen flex flex-col items-center justify-center">
+<svelte:head>
+    <title>Projects</title> 
+</svelte:head>
+
+
+<div class=" flex flex-col items-center justify-center">
   <h1 class="text-4xl font-bold mb-12 text-center">Projects</h1>
 
   {#if data.error}

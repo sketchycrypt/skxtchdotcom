@@ -1,6 +1,5 @@
 <script>
   let { children } = $props();
-  import background from "$lib/assets/bg.png";
   import { fade } from "svelte/transition";
   import { page } from "$app/stores"; 
   import "../app.css";
@@ -18,6 +17,7 @@
   function toggleMenu() {
     mobileMenuOpen = !mobileMenuOpen;
   }
+
 </script>
 
 <svelte:head>
@@ -25,14 +25,18 @@
   <title>Projects</title>
 </svelte:head>
 
-<main class="font-lexend font-bold relative min-h-screen text-white">
-  <div
-    class="opacity-100 scale-105 fixed inset-0 bg-cover bg-center bg-no-repeat blur-sm z-0"
+<main class="font-instrumentsans font-bold relative text-white">
+ 
+ <!-- <div
+    class="opacity-100 scale-105 fixed inset-0 bg-cover bg-center bg-no-repeat blur-md z-0"
     style="background-image: url('{background}')"
-  ></div>
+  ></div> -->
+  
+
 
   <div class="relative z-10 flex flex-col min-h-screen">
-    <nav class="bg-neutral-900/90 backdrop-blur-sm py-2 md:py-4 sticky top-0 z-20">
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-neutral-900 -z-10"></div>
+    <nav class="bg-linear-to-b from-black/30 to-neutral-900 backdrop-blur-sm py-4 md:py-4 sticky top-0 z-20">
       <div class="container md:mx-auto px-4 sm:px-6">
         <div class="hidden md:flex justify-center space-x-2 sm:space-x-4 md:space-x-6">
           {#each navLinks as { href, text }}
@@ -48,6 +52,11 @@
         </div>
         
         <div class="md:hidden flex items-center justify-between">
+
+          <a href="/home" class="absolute left-1/2 transform -translate-x-1/2 text-lg font-extrabold tracking-tight text-white">
+            skxtch.com
+          </a>
+    
           <button 
             onclick={toggleMenu}
             class="text-white focus:outline-none"
@@ -69,7 +78,8 @@
           </button>
 
           {#if mobileMenuOpen}
-            <div class="absolute top-16 left-0 right-0 bg-neutral-900/95 backdrop-blur-md py-4 px-6">
+          
+            <div class="absolute top-13 left-0 right-0 bg-neutral-900/95 backdrop-blur-md py-4 px-6">
               <div class="flex flex-col space-y-4">
                 {#each navLinks as { href, text }}
                   <a
@@ -89,15 +99,16 @@
       </div>
     </nav>
 
-    <div class="container mx-auto p-6 flex-grow">
+    <div class="container mx-auto p-6 flex-grow flex flex-col justify-center items-center text-center">
       {#key children}
         <div transition:fade>
           {@render children()}
         </div>
       {/key}
     </div>
+    
 
-    <footer class="bg-neutral-900 text-white text-center p-8 mb-0">
+    <footer class="bg-linear-to-t from-black/30 to-neutral-900 text-white text-center p-8 mb-0">
       © 2024-2025 skxtch.com
     </footer>
   </div>

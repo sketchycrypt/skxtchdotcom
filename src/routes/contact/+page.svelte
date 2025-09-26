@@ -24,7 +24,7 @@
   <title>Contact</title>
 </svelte:head>
 
-<main class="min-h-screen flex items-center justify-center p-4">
+<main class=" flex items-center justify-center p-4">
   <div class="flex flex-col items-center gap-4 w-full max-w-xs">
     {#each buttons as button}
       <a

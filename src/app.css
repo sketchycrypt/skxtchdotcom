@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-navyblack: #101010;
-  --font-lexend: "Lexend", sans-serif;
+  --font-instrumentsans: "Instrument Sans", sans-serif;
 }
 
 .main-bg {
