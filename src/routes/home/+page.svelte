@@ -43,6 +43,14 @@
     />
   </div>
 
+  <div class="flex flex-col items-center gap-4 w-full max-w-xs">
+    <a
+        href="/about"
+        class="flex items-center justify-center gap-3 bg-navyblack w-48 px-6 py-3 rounded-lg text-white font-medium shadow-md hover:invert transition ease-in-out"
+      >
+      about me
+  </div>
+
   <div
     class="w-full max-w-md p-4 rounded-lg bg-navyblack/75 text-white text-center"
   >
