@@ -1,5 +1,6 @@
 <svelte:head>
     <title>Home</title> 
+    <meta property="og:description" content="home page of my website" />
 </svelte:head>
 
 <script>

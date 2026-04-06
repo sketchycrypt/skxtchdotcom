@@ -29,6 +29,7 @@
 
 <svelte:head>
     <title>Projects</title> 
+    <meta property="og:description" content="the projects im most proud of" />
 </svelte:head>
 
 

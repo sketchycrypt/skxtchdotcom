@@ -137,6 +137,7 @@ onDestroy(() => {
 
 <svelte:head>
     <title>About</title>
+    <meta property="og:description" content="about me!" />
     </svelte:head>
 
     <div class=" flex flex-col items-center justify-center space-y-6">
