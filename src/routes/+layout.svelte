@@ -42,7 +42,7 @@
 
 <meta property="og:title" content="skxtch.com" />
 <meta property="og:description" content="my silly little website :3" />
-<meta property="og:image" content="https://skxtch.com/favicon.ico" />
+<meta property="og:image" content="https://skxtch.com/icon.png" />
 <meta property="og:url" content="https://skxtch.com" />
 <meta property="og:type" content="website" />
 
