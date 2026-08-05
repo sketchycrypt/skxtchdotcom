@@ -164,7 +164,7 @@ onDestroy(() => {
                 />
         </div>
         <p class="text-2xl max-w-md text-center">
-            I am a 20-year-old from Morocco who enjoys developing things for fun and
+            I am a 20-year-old who enjoys developing things for fun and
             occasionally tackling difficult challenges.
         </p>
 
