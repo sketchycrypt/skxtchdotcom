@@ -3,6 +3,7 @@
   import { blur, fly } from "svelte/transition";
   import { page } from "$app/stores";
   import "../app.css";
+  import ShaderBackground from "$lib/components/ShaderBackground.svelte";
 
   // navbar icons (annoying)
   import home from "$lib/assets/svgs/navbar/home.svg";
@@ -46,12 +47,16 @@
 <meta property="og:url" content="https://skxtch.com" />
 <meta property="og:type" content="website" />
 
+<ShaderBackground />
+
 <main class="font-instrumentsans font-bold relative text-white">
   <div class="relative z-10 flex flex-col min-h-screen">
     <div
-      class="absolute inset-0 bg-gradient-to-t from-neutral-900 to-neutral-900 -z-10"
+      class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 to-neutral-900/90 -z-10"
     ></div>
-    <nav class="bg-black backdrop-blur-sm py-4 md:py-4 sticky top-0 z-20">
+    <nav
+      class="bg-gradient-to-t from-neutral-800/90 to-neutral-800/70 backdrop-blur-sm py-4 md:py-4 sticky top-0 z-20"
+    >
       <div class="container md:mx-auto px-4 sm:px-6">
         <div
           class="hidden md:flex justify-center space-x-2 sm:space-x-4 md:space-x-6"
@@ -116,7 +121,7 @@
           {#if mobileMenuOpen}
             <div
               transition:fly={{ y: -50, duration: 150 }}
-              class="absolute top-13 left-0 right-0 bg-black backdrop-blur-md py-4 px-6"
+              class="absolute top-13 left-0 right-0 bg-gradient-to-t from-neutral-800/90 to-neutral-800/70 backdrop-blur-md py-4 px-6"
             >
               <div class="flex flex-col space-y-4">
                 {#each navLinks as { href, text }}
@@ -150,9 +155,23 @@
     </div>
 
     <footer
-      class="bg-linear-to-t from-black/30 to-neutral-900 text-white text-center p-8 mb-0"
+      class="bg-linear-to-t from-black/30 to-neutral-900 text-white text-center p-8 mb-0 text-sm text-neutral-400"
     >
-      © 2024-2025 skxtch.com
+      © 2024-2026 skxtch.com —
+      <a
+        href="https://www.shadertoy.com/view/MdVXzw"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-sky-700 transition-colors"
+        >background shader</a
+      >
+      by
+      <a
+        href="https://www.shadertoy.com/user/vamoss"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-sky-700 transition-colors">vamoss</a
+      >
     </footer>
   </div>
 </main>
